@@ -24,7 +24,6 @@ requirements:
     - parallel
     - pysam
     - tqdm
-    - python >=3.8
     - bedtools
     - bcftools
     - samtools
@@ -39,7 +38,6 @@ requirements:
     - parallel
     - pysam
     - tqdm
-    - python >=3.8
     - bedtools
     - bcftools
     - samtools
