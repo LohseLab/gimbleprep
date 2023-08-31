@@ -1,0 +1,62 @@
+{% set name = "gimble-preprocess" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/LohseLab/gIMble/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 35234525296a031c77d2a1f411e7f8f9243fbdabd06eec0ec0563e6bd71f1b47
+
+build:
+  noarch: python
+  number: 0
+  entry_points:
+    - gimble-preprocess = cli.interface.main
+
+requirements:
+  host:
+    - python >=3.8
+    - docopt
+    - numpy
+    - pandas
+    - parallel
+    - pysam
+    - tqdm
+    - bedtools
+    - bcftools
+    - samtools
+    - vcflib
+    - mosdepth 0.3.2
+
+  run:
+    - python >=3.8
+    - docopt
+    - numpy
+    - pandas
+    - parallel
+    - pysam
+    - tqdm
+    - bedtools
+    - bcftools
+    - samtools
+    - vcflib
+    - mosdepth 0.3.2
+    
+test:
+  commands:
+    - gimble-preprocess --help
+
+
+about:
+  home: https://github.com/LohseLab/gimble-preprocess
+  summary: Preprocess input ready for gimble.
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  doc_url: https://github.com/LohseLab/gimble-preprocess
+
+extra:
+  recipe-maintainers:
+    - GertjanBisschop
+    - DRL
