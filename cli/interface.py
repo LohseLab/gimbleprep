@@ -19,7 +19,7 @@ MODULES = RUNNER_BY_MODULE.keys()
 
 def main(gimble_dir=None):
     if gimble_dir is None:
-        gimble_dir = os.path.dirname(os.path.realpath(__file__))
+        gimble_dir = os.path.dirname(os.path.join(os.path.realpath(__file__), '..'))
     try:
         start_time = timer()
         __version__ = '0.0.1'
