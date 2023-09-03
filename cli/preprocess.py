@@ -1,5 +1,5 @@
 """
-usage: gimble-preprocess                 -f <f> -v <v> -b <b> [-g <g> -m <m> -M <M> -q <q> -t <t> -o <o> -k] [-h|--help]
+usage: gimbleprep                 -f <f> -v <v> -b <b> [-g <g> -m <m> -M <M> -q <q> -t <t> -o <o> -k] [-h|--help]
                                             
     [Options]
         -f, --fasta_file=<f>             FASTA file
