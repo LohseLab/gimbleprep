@@ -1,4 +1,4 @@
-"""usage: gimble-preprocess [<args>...] [-V -h]
+"""usage: gimbleprep [<args>...] [-V -h]
 
 [Options]
     -h, --help            Show this screen
