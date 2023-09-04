@@ -1,8 +1,18 @@
-"""usage: gimbleprep [<args>...] [-V -h]
-
+"""
+usage: gimbleprep                 -f <f> -v <v> -b <b> [-g <g> -m <m> -M <M> -q <q> -t <t> -o <o> -k] [-h|--help]
+                                        
 [Options]
-    -h, --help            Show this screen
-    -V, --version         Show version
+    -f, --fasta_file=<f>             FASTA file
+    -v, --vcf_file=<v>               VCF file (raw)
+    -b, --bam_dir=<b>                Directory containing all BAM files
+    -g, --snpgap=<g>                 SnpGap [default: 2]
+    -q, --min_qual=<q>               Minimum PHRED quality [default: 1]
+    -m, --min_depth=<m>              Min read depth [default: 8]
+    -M, --max_depth=<M>              Max read depth (as multiple of mean coverage of each BAM) [default: 2]
+    -t, --threads=<t>                Threads [default: 1]
+    -o, --outprefix=<o>              Outprefix [default: gimble]
+    -k, --keep_tmp                   Do not delete temporary files [default: False]
+    -h, --help                       Show this
 """
 
 import sys
@@ -22,10 +32,11 @@ def main(gimble_dir=None):
         gimble_dir = os.path.dirname(os.path.join(os.path.realpath(__file__), '..'))
     try:
         start_time = timer()
-        __version__ = '0.0.1'
+        __version__ = '0.0.2d'
         version = "gimble v%s" % __version__
         args = docopt(__doc__, version=version, options_first=True)
-        if '--version' in args['<args>'] or '-V' in args['<args>']:
+        # print(args)
+        if '--version' in args.keys() or '-V' in args.keys():
             sys.exit("gimble v%s" % __version__)
         params = {
             'module': 'preprocess',
