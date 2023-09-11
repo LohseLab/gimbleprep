@@ -12,20 +12,7 @@ gimbleprep
 # Installation
 
 ```
-# 1a. clone repository
->>> git clone https://github.com/DRL/gimble.git
-# 1b. clone repository
->>> git clone https://github.com/DRL/gimbleprep.git
-# 2. Install miniconda from https://conda.io/miniconda.html
-# ...
-# 3. Create the following conda environment 
->>> conda create -n gimble python=3.7.12 agemo bedtools bcftools samtools vcflib mosdepth=0.3.2 pysam numpy docopt tqdm pandas tabulate zarr scikit-allel parallel matplotlib msprime demes dask numcodecs python-newick nlopt -c conda-forge -c bioconda
-# 4. Load the environment (needs to be activated when using gimble)
->>> conda activate gimble
-# 5a. Start gimbleprep'ing ...
->>> (gimble) gimbleprep/gimbleprep --help
-# 5b. Start gimble'ing ...
->>> (gimble) gIMble/gimble --help
+`conda install -c bioconda gimbleprep`
 ```
 
 # Gimble Workflow
@@ -50,7 +37,7 @@ can be described, written to column-based output files or removed using the modu
 While this processing of input files could be done more efficiently with other means, it has the advantage of generating a VCF file complies with `gimble` data requirements but which can also be used in alternative downstream analyses.
 
 ```
-./gimbleprep -f FASTA -b BAM_DIR/ -v RAW.vcf.gz -k
+gimbleprep -f FASTA -b BAM_DIR/ -v RAW.vcf.gz -k
 ```
 
 Based on the supplied input files:
