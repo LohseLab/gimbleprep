@@ -15,7 +15,7 @@ usage: gimbleprep                 -f <f> -v <v> -b <b> [-g <g> -m <m> -M <M> -q 
         -h, --help                       Show this
 """
 
-import lib.runargs
+import gimbleprep.runargs
 import numpy as np
 import tempfile
 import pathlib

@@ -22,7 +22,7 @@ from docopt import docopt
 from timeit import default_timer as timer
 
 RUNNER_BY_MODULE = {
-    'preprocess': 'cli.preprocess', 
+    'preprocess': 'gimbleprep.preprocess', 
 }
 MODULES = RUNNER_BY_MODULE.keys()
 
