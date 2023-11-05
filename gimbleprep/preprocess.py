@@ -15,7 +15,6 @@ usage: gimbleprep                 -f <f> -v <v> -b <b> [-g <g> -m <m> -M <M> -q 
         -h, --help                       Show this
 """
 
-import gimbleprep.runargs
 import numpy as np
 import tempfile
 import pathlib
@@ -26,6 +25,9 @@ import shutil
 from tqdm import tqdm
 import pysam
 import pandas as pd
+
+import gimbleprep.runargs as runargs
+
 from timeit import default_timer as timer
 from docopt import docopt
 
@@ -68,7 +70,7 @@ def fix_permissions(path):
             os.chmod(_f, 0o664)
         #os.chmod(root, 0o775)
 
-class PreprocessParameterObj(lib.runargs.RunArgs):
+class PreprocessParameterObj(runargs.RunArgs):
     '''Sanitises command line arguments and stores parameters'''
     def __init__(self, params, args):
         super().__init__(params)
@@ -271,7 +273,7 @@ def main(params):
         parameterObj = PreprocessParameterObj(params, args)
         print("[+] Running 'gimble-preprocess'...")
         preprocess(parameterObj)
-        print("[*] Total runtime was %s" % (lib.runargs.format_time(timer() - start_time)))
+        print("[*] Total runtime was %s" % (runargs.format_time(timer() - start_time)))
     except KeyboardInterrupt:
-        print("\n[X] Interrupted by user after %s !\n" % (lib.runargs.format_time(timer() - start_time)))
+        print("\n[X] Interrupted by user after %s !\n" % (runargs.format_time(timer() - start_time)))
         exit(-1)

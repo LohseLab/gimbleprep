@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from cli.interface import main
+from gimbleprep.interface import main
 
 if __name__ == '__main__':
     main(os.path.dirname(os.path.realpath(__file__)))
