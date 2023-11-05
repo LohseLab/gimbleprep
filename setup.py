@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='gimbleprep',
-    version='0.0.2b4',
+    version='0.0.2b5',
     description='Preprocess fasta, bam and vcf files ready to be used by gimble',
     url='http://github.com/LohseLab/gimbleprep',
     author='Lohse Lab',
