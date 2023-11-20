@@ -12,7 +12,7 @@ gimbleprep
 # Installation
 
 ```
-`conda install -c bioconda gimbleprep`
+conda install -c bioconda gimbleprep
 ```
 
 # Gimble Workflow
