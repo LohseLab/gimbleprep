@@ -23,7 +23,8 @@ setup(
         "bedtools",
         "bcftools",
         "samtools",
-        "vcflib",
+        "vcflib==1.0.3",
+        "tabixpp==1.1.0"
         "mosdepth==0.3.2"
     ],
     entry_points={
