@@ -96,3 +96,17 @@ Resulting BED file
     ``` 
     
 #### Congratulations! You can now release the power of gimble on this dataset.
+
+#### Running gimbleprep as docker application
+Building docker image
+
+`docker build -t gimbleprep --rm .`
+
+Runs command in new container. Note the list of command line arguments trailing the end of this command. Other command line options can be added as well.
+
+```{bash}
+docker run --name gimbleprep --rm gimbleprep \
+  --mount type=bind,source=”$(pwd)”,target=/home/newuser \
+  -f fasta-file -v vcf-file -b bam-dir
+  ```
+
